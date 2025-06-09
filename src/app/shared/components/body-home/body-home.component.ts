@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-body-home',
@@ -6,6 +6,34 @@ import { Component } from '@angular/core';
   templateUrl: './body-home.component.html',
   styleUrl: './body-home.component.scss'
 })
-export class BodyHomeComponent {
+export class BodyHomeComponent implements OnInit, OnDestroy {
 
+  backgroundImages = [
+    '/assets/images/capa-album-caos.jpeg',
+    '/assets/images/supernova.png',
+    '/assets/images/filipe-ret.webp',
+    '/assets/images/djonga.webp',
+    '/assets/images/Matue.webp',
+    '/assets/images/kayblack.jpg',
+  ];
+  currentImageIndex = 0;
+  intervalId: any;
+
+  ngOnInit(): void {
+      this.startCarousel();
+  }
+
+  startCarousel(): void {
+    this.intervalId = setInterval(() => {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.backgroundImages.length;
+    }, 5000);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
+  }
+
+  get currentBackground(): string {
+    return `url(${this.backgroundImages[this.currentImageIndex]})`;
+  }
 }
