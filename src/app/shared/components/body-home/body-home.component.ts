@@ -11,10 +11,10 @@ export class BodyHomeComponent implements OnInit, OnDestroy {
   backgroundImages = [
     '/assets/images/capa-album-caos.jpeg',
     '/assets/images/supernova.png',
-    '/assets/images/filipe-ret.webp',
     '/assets/images/djonga.webp',
     '/assets/images/Matue.webp',
-    '/assets/images/kayblack.jpg',
+
+    '/assets/images/major-rd.webp',
   ];
   currentImageIndex = 0;
   intervalId: any;
