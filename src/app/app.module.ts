@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { BodyHomeComponent } from './shared/components/body-home/body-home.component';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BodyAboutComponent } from './shared/components/body-about/body-about.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodyHomeComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    BodyAboutComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
